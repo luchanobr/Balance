@@ -1,0 +1,91 @@
+
+.social a:hover {
+    color: #ed830c !important;
+}
+.nav2 {
+    color: black;
+}
+.nav1:hover , .nav2:hover {
+    color: #ed830c !important;
+}
+.header-index {
+    background-image: url("../img/header.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.h1-header , .h2-header , .h3-header {
+    color: #ed830c;
+    font-weight: 700;
+}
+.main-index {
+    background-color: rgb(247, 236, 223);
+    
+}
+
+.footer-index {
+    background-color: rgb(83, 60, 43);
+}
+
+.aside-index {
+    background-color: rgba(241, 241, 227, 0.979);
+}
+
+.h3-noticias::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    background-color: #ed830c;
+    bottom: 3px;
+    display: block;
+
+}
+.div-login {
+    background-image: url("../img/coffee-2425294_1920.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.form-login {
+    background-color: white;
+    min-height: 600px;
+}
+.login {
+    height: 100vh;
+}
+.copyrights::before {
+    content: "";
+    height: 2px;
+    background-color: lightgray;
+    width: 70%;
+    bottom: 3px;
+    display: block;
+    margin-left: 15%;
+    margin-top: 0.8rem;
+    
+}
+
+
+
+
+@media (max-width: 768px) {
+    body {
+     font-size: 0.8rem;
+    }
+    h1 {
+   font-size: 1.8rem;
+    }
+    h2 {
+  font-size: 1.4rem;
+    }
+    h3 {
+      font-size: 1.1rem;
+    }
+    h4 {
+    font-size: 1rem;
+    }
+  }
