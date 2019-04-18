@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
 </head>
 <body>
 <div class="container">
@@ -48,19 +48,22 @@
                     <h3 class="h3-header">Control sencillo de ingresos y gastos</h3>
                 </div>
             </div>
-
+            
         </header>  
         
         <section class="container">
             <div class="row mt-4">
                 <main class="col-lg-8 mr-lg-3 main-index mb-4 mb-lg-0">
-                    <h2 class="p-2"> Algo super importante de Balance</h2>
+                    <h2 class="p-2 text-center"> Algo super importante de Balance</h2>
+                    <img src="img/laptop.jpg" class="img-fluid rounded float-right imagen-main ml-4" alt="mujer trabajando en notebook">
                     <p class="px-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, nisi repellat? Nobis deleniti possimus rem deserunt, animi, accusamus sed ducimus delectus nemo sequi quo obcaecati totam amet ratione unde nam!</p>
                     <p class="px-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, nisi repellat? Nobis deleniti possimus rem deserunt, animi, accusamus sed ducimus delectus nemo sequi quo obcaecati totam amet ratione unde nam!</p>
                     <p class="px-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, nisi repellat? Nobis deleniti possimus rem deserunt, animi, accusamus sed ducimus delectus nemo sequi quo obcaecati totam amet ratione unde nam!</p>  
+                    
                 </main>
-                <aside class="col-lg d-flex flex-column align-items-start justify-content-center aside-index">
-                    <h3 class="pl-3 h3-noticias pt-4 py-lg-0">Noticias</h3> 
+                <aside class="col-lg d-flex flex-column align-items-center justify-content-center aside-index">
+                    <div class="aside1-index col m-3 d-flex flex-column justify-content-center align-items-start">
+                    <h3 class="pl-3 h3-noticias pt-4 py-lg-0 mt-2">Noticias</h3> 
                     <ul class="nav flex-column pb-3 py-lg-2">
                                 <li class="nav-item">
                                   <a class="nav-link nav2" href="#">Updates</a>
@@ -75,7 +78,39 @@
                                   <a class="nav-link nav2" href="#">Tips</a>
                                 </li>
                         </ul>
+                    </div>
                 </aside>
+
+            </div>
+
+            <div class="row justify-content-center align-content-center clientes my-5 text-white">
+
+                <div class="col-8 d-flex flex-column flex-lg-row justify-content-around align-content-center">
+                    <div class="d-flex flex-column align-content-center justify-content-center col-lg-4 p-5">
+                        <div class="rounded-circle cliente-item1 align-items-center d-flex justify-content-center">
+                            <p class="text-center">125.500</p>
+                        </div>
+                        <div class="cliente-text pt-2">
+                            <p class="text-center">Usuarios unicos</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column align-content-center justify-content-center col-lg-4 p-5">
+                        <div class="rounded-circle cliente-item2 align-items-center d-flex justify-content-center">
+                            <p class="text-center">366.411</p>
+                        </div>
+                        <div class="cliente-text pt-2">
+                            <p class="text-center">Pesos ahorrados</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column align-content-center justify-content-center col-lg-4 p-5">
+                        <div class="rounded-circle cliente-item3 align-items-center d-flex justify-content-center">
+                            <p class="text-center">4.8/5</p>
+                        </div>
+                        <div class="cliente-text pt-2">
+                            <p class="text-center">Estrellas</p>
+                        </div>
+                    </div> 
+                </div>
             </div>
 
         </section>
@@ -84,36 +119,34 @@
         <section>
 
             <div class="row mt-4">
-
-                <div class="col-md-4 pb-3">
-                    <div class="card">
-                        <img src="img/office.jpg" class="card-img-top" alt="hombre haciedno calculos">
-                        <div class="card-body">
-                            <h5 class="card-title">Algunas feature ramdon </h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus repellat dicta, et minima praesentium autem nihil cumque officiis quos fugit, sapiente iste cum labore officia vitae ad earum fugiat excepturi.</p>
+                    <div class="col-md-4 pb-3">
+                        <div class="card">
+                            <img src="img/office.jpg" class="card-img-top" alt="hombre haciedno calculos">
+                            <div class="card-body">
+                                <h5 class="card-title">Algunas feature ramdon </h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus repellat dicta, et minima praesentium autem nihil cumque officiis quos fugit, sapiente iste cum labore officia vitae ad earum fugiat excepturi.</p>
+                            </div>
                         </div>
+
                     </div>
-
-                </div>
-                <div class="col-md-4 pb-3">
-                        <div class="card">
-                                <img src="img/woman.jpg" class="card-img-top" alt="mujer usando una notebook">
-                                <div class="card-body">
-                                    <h5 class="card-title">Otra feature de Balance</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus repellat dicta, et minima praesentium autem nihil cumque officiis quos fugit, sapiente iste cum labore officia vitae ad earum fugiat excepturi.</p>
-                                </div>
-                            </div> 
-                </div>
-                <div class="col-md-4 pb-3">
-                        <div class="card">
-                                <img src="img/phone.jpg" class="card-img-top" alt="mujer usando un celular">
-                                <div class="card-body">
-                                    <h5 class="card-title">Es una app para cel y tablets</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus repellat dicta, et minima praesentium autem nihil cumque officiis quos fugit, sapiente iste cum labore officia vitae ad earum fugiat excepturi.</p>
-                                </div>
-                        </div>
-                </div>
-                        
+                    <div class="col-md-4 pb-3">
+                            <div class="card">
+                                    <img src="img/woman.jpg" class="card-img-top" alt="mujer usando una notebook">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Otra feature de Balance</h5>
+                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus repellat dicta, et minima praesentium autem nihil cumque officiis quos fugit, sapiente iste cum labore officia vitae ad earum fugiat excepturi.</p>
+                                    </div>
+                                </div> 
+                    </div>
+                    <div class="col-md-4 pb-3">
+                            <div class="card">
+                                    <img src="img/phone.jpg" class="card-img-top" alt="mujer usando un celular">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Es una app para cel y tablets</h5>
+                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus repellat dicta, et minima praesentium autem nihil cumque officiis quos fugit, sapiente iste cum labore officia vitae ad earum fugiat excepturi.</p>
+                                    </div>
+                            </div>
+                    </div>
             </div>       
                 
         </section>

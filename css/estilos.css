@@ -20,18 +20,50 @@
     font-weight: 700;
 }
 .main-index {
-    background-color: rgb(247, 236, 223);
+    background: linear-gradient( to bottom, rgba(247, 236, 223, 1), rgba(247, 236 , 223, 0) );
     
 }
-
+.imagen-main {
+    
+}
 .footer-index {
-    background-color: rgb(83, 60, 43);
+    background:linear-gradient( to bottom,  rgba(31, 24, 17, 0.62), rgb(27, 17, 12) );
 }
 
+.aside1-index {
+    background-color: rgba(248, 248, 242, 0.979);
+    margin: 3px;
+}
 .aside-index {
-    background-color: rgba(241, 241, 227, 0.979);
+    background-color: white;    
+    border: 5px solid rgba(180, 183, 185, 0.404);
 }
-
+.clientes {
+    background-image: url("../img/clientes.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.cliente-item1 , .cliente-item2, .cliente-item3 {
+    width: 150px;
+    height: 150px;
+    align-self: center;
+    font-size: 2rem;
+}
+.cliente-item1 {
+    background-color: cornflowerblue;
+}
+.cliente-item2 {
+    background-color: #28a745;
+}
+.cliente-item3 {
+    background-color: gold;
+}
+.cliente-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
 .h3-noticias::after {
     content: "";
     height: 3px;
