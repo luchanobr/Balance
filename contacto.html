@@ -14,11 +14,67 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container-fluid p-0">
-        <div class="row">
+    <div class="container-fluid p-0 div-contacto">
 
-            <div class="col">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/balance.svg" width="30" height="30" class="d-inline-block align-top" alt="Balance">
+                        Balance 
+                      </a>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav nav-main flex-grow-1 justify-content-center">
+                          <a class="nav-item nav-link nav1" href="index.html">Home</a>
+                          <a class="nav-item nav-link nav1" href="login.html">Login</a>
+                          <a class="nav-item nav-link nav1" href="registro.html">Registrarse</a>
+                          <a class="nav-item nav-link nav1" href="contacto.html">Contacto</a>
+                        </div>
+                            <ul class="navbar-nav social flex-row">
+                                <li><a class="nav-item nav-link mr-2" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a class="nav-item nav-link mx-2" href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a class="nav-item nav-link mx-2" href="#"><i class="fab fa-instagram"></i></a></li>
+                                
+                            </ul>
+            
+                      </div>
+                      
+            </nav>
 
+        <div class="row justify-content-center align-items-center contacto">
+
+            <div class="col-6 contacto align-items-center d-flex ">
+                <form class="flex-grow-1"  action="">
+
+                    <h1 class="text-center">Contactate con Balance</h1>
+
+                    <div class="form-group">
+
+                        <label for="text-contacto">Nombre</label>
+                        <input type="text" name="" id="text-contacto" class="form-control">
+
+                    </div>
+
+                    <div class="form-group">
+                      <label for="">Email</label>
+                      <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="">
+                     
+                    </div>
+
+                    <div class="form-group">
+                      <label for="">Ingresa tu texto</label>
+                      <textarea class="form-control" name="" id="" rows="6"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success"> <i class="fa fa-envelope" aria-hidden="true"></i>  Enviar</button>
+
+
+
+
+
+
+                </form>
                 
             </div>
         </div>
