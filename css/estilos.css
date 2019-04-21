@@ -130,8 +130,12 @@
     height: 100vh;
     overflow: hidden;
 }
+.div-iframe {
+    background-color: rgb(0, 174, 255);
+    opacity: 0.9;
+}
 
-
+}
 @media (max-width: 991px) {
     .registro { 
         background-color: rgba(255, 255, 255, 0);
