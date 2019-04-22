@@ -1,197 +1,248 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Balance - Tu aplicación para controlar tus finanzas</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-</head>
-<body>
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-        <a class="navbar-brand" href="#">
-            <img src="img/balance.svg" width="30" height="30" class="d-inline-block align-top" alt="Balance">
-            Balance 
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav nav-main flex-grow-1 justify-content-center">
-              <a class="nav-item nav-link nav1" href="index.html">Home</a>
-              <a class="nav-item nav-link nav1" href="login.html">Login</a>
-              <a class="nav-item nav-link nav1" href="registro.html">Registrarse</a>
-              <a class="nav-item nav-link nav1" href="contacto.html">Contacto</a>
-            </div>
-                <ul class="navbar-nav social flex-row">
-                    <li><a class="nav-item nav-link mr-2" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a class="nav-item nav-link mx-2" href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a class="nav-item nav-link mx-2" href="#"><i class="fab fa-instagram"></i></a></li>
-                    
-                </ul>
-
-          </div>
-          
-    </nav>
-        <header class="container">
-            <div class="row header-index justify-content-center align-items-center">
-                <div class="col d-flex flex-column justify-content-center align-items-center">
-                    <h2 class="h2-header pb-2">Economía y Finanzas</h2>
-                    <h1 class="h1-header pb-2">Balance</h1>
-                    <h3 class="h3-header">Control sencillo de ingresos y gastos</h3>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Balance - Tu aplicación para controlar tus finanzas</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="css/estilos.css" />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+        ></script>
+        <script src="js/scripts.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+                <a class="navbar-brand" href="#">
+                    <img src="img/balance.svg" width="30" height="30" class="d-inline-block align-top" alt="Balance" />
+                    Balance
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav nav-main flex-grow-1 justify-content-center">
+                        <a class="nav-item nav-link nav1" href="index.html">Home</a>
+                        <a class="nav-item nav-link nav1" href="login.html">Login</a>
+                        <a class="nav-item nav-link nav1" href="registro.html">Registrarse</a>
+                        <a class="nav-item nav-link nav1" href="contacto.html">Contacto</a>
+                    </div>
+                    <ul class="navbar-nav social flex-row">
+                        <li>
+                            <a class="nav-item nav-link mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a class="nav-item nav-link mx-2" href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a class="nav-item nav-link mx-2" href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            
-        </header>  
-        
-        <section class="container">
-            <div class="row mt-4">
-                <main class="col-lg-8 mr-lg-3 main-index mb-4 mb-lg-0">
-                    <h2 class="p-2 text-center"> Algo super importante de Balance</h2>
-                    <img src="img/laptop.jpg" class="img-fluid rounded float-right imagen-main ml-4" alt="mujer trabajando en notebook">
-                    <p class="px-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, nisi repellat? Nobis deleniti possimus rem deserunt, animi, accusamus sed ducimus delectus nemo sequi quo obcaecati totam amet ratione unde nam!</p>
-                    <p class="px-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, nisi repellat? Nobis deleniti possimus rem deserunt, animi, accusamus sed ducimus delectus nemo sequi quo obcaecati totam amet ratione unde nam!</p>
-                    <p class="px-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, nisi repellat? Nobis deleniti possimus rem deserunt, animi, accusamus sed ducimus delectus nemo sequi quo obcaecati totam amet ratione unde nam!</p>  
-                    
-                </main>
-                <aside class="col-lg d-flex flex-column align-items-center justify-content-center aside-index">
-                    <div class="aside1-index col m-3 d-flex flex-column justify-content-center align-items-start">
-                    <h3 class="pl-3 h3-noticias pt-4 py-lg-0 mt-2">Noticias</h3> 
-                    <ul class="nav flex-column pb-3 py-lg-2">
-                                <li class="nav-item">
-                                  <a class="nav-link nav2" href="#">Updates</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link nav2" href="#">Finanzas</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link nav2" href="#">Ahorros</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link nav2" href="#">Tips</a>
-                                </li>
-                        </ul>
+            </nav>
+            <header class="container">
+                <div class="row header-index justify-content-center align-items-center">
+                    <div class="col d-flex flex-column justify-content-center align-items-center">
+                        <h2 class="h2-header pb-2">Economía y Finanzas</h2>
+                        <h1 class="h1-header pb-2">Balance</h1>
+                        <h3 class="h3-header">Control sencillo de ingresos y gastos</h3>
                     </div>
-                </aside>
-
-            </div>
-
-            <div class="row justify-content-center align-content-center clientes my-5 text-white">
-
-                <div class="col-9 d-flex flex-column flex-lg-row justify-content-around align-content-center">
-                    <div class="d-flex flex-column align-content-center justify-content-center col-lg-4 p-5">
-                        <div class="rounded-circle cliente-item1 align-items-center d-flex justify-content-center">
-                            <p class="text-center">125.500</p>
-                        </div>
-                        <div class="cliente-text pt-2">
-                            <p class="text-center">Usuarios unicos</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column align-content-center justify-content-center col-lg-4 p-5">
-                        <div class="rounded-circle cliente-item2 align-items-center d-flex justify-content-center">
-                            <p class="text-center">366.411</p>
-                        </div>
-                        <div class="cliente-text pt-2">
-                            <p class="text-center">Pesos ahorrados</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column align-content-center justify-content-center col-lg-4 p-5">
-                        <div class="rounded-circle cliente-item3 align-items-center d-flex justify-content-center">
-                            <p class="text-center">4.8/5</p>
-                        </div>
-                        <div class="cliente-text pt-2">
-                            <p class="text-center">Estrellas</p>
-                        </div>
-                    </div> 
                 </div>
-            </div>
+            </header>
 
-        </section>
+            <section class="container">
+                <div class="row mt-4">
+                    <main class="col-lg-8 mr-lg-3 main-index mb-4 mb-lg-0">
+                        <h2 class="p-2 text-center">Algo super importante de Balance</h2>
+                        <img src="img/laptop.jpg" class="img-fluid rounded float-right imagen-main ml-4" alt="mujer trabajando en notebook" />
+                        <p class="px-3">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, nisi repellat? Nobis deleniti possimus rem deserunt, animi, accusamus
+                            sed ducimus delectus nemo sequi quo obcaecati totam amet ratione unde nam!
+                        </p>
+                        <p class="px-3">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, nisi repellat? Nobis deleniti possimus rem deserunt, animi, accusamus
+                            sed ducimus delectus nemo sequi quo obcaecati totam amet ratione unde nam!
+                        </p>
+                        <p class="px-3">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, nisi repellat? Nobis deleniti possimus rem deserunt, animi, accusamus
+                            sed ducimus delectus nemo sequi quo obcaecati totam amet ratione unde nam!
+                        </p>
+                    </main>
+                    <aside class="col-lg d-flex flex-column align-items-center justify-content-center aside-index">
+                        <div class="aside1-index col m-3 d-flex flex-column justify-content-center align-items-start">
+                            <h3 class="pl-3 h3-noticias pt-4 py-lg-0 mt-2">Noticias</h3>
+                            <ul class="nav flex-column pb-3 py-lg-2">
+                                <li class="nav-item">
+                                    <a class="nav-link nav2" href="#">Updates</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav2" href="#">Finanzas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav2" href="#">Ahorros</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav2" href="#">Tips</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
 
+                <div class="row justify-content-center align-content-center clientes my-5 text-white">
+                    <div class="col-9 d-flex flex-column flex-lg-row justify-content-around align-content-center">
+                        <div class="d-flex flex-column align-content-center justify-content-center col-lg-4 p-5">
+                            <div class="rounded-circle cliente-item1 align-items-center d-flex justify-content-center">
+                                <p class="text-center">125.500</p>
+                            </div>
+                            <div class="cliente-text pt-2">
+                                <p class="text-center">Usuarios unicos</p>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column align-content-center justify-content-center col-lg-4 p-5">
+                            <div class="rounded-circle cliente-item2 align-items-center d-flex justify-content-center">
+                                <p class="text-center">366.411</p>
+                            </div>
+                            <div class="cliente-text pt-2">
+                                <p class="text-center">Pesos ahorrados</p>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column align-content-center justify-content-center col-lg-4 p-5">
+                            <div class="rounded-circle cliente-item3 align-items-center d-flex justify-content-center">
+                                <p class="text-center">4.8/5</p>
+                            </div>
+                            <div class="cliente-text pt-2">
+                                <p class="text-center">Estrellas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <section>
-
-            <div class="row mt-4">
+            <section>
+                <div class="row mt-4">
                     <div class="col-md-4 pb-3">
                         <div class="card">
-                            <img src="img/office.jpg" class="card-img-top" alt="hombre haciedno calculos">
+                            <img src="img/office.jpg" class="card-img-top" alt="hombre haciedno calculos" />
                             <div class="card-body">
-                                <h5 class="card-title">Algunas feature ramdon </h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus repellat dicta, et minima praesentium autem nihil cumque officiis quos fugit, sapiente iste cum labore officia vitae ad earum fugiat excepturi.</p>
+                                <h5 class="card-title">Algunas feature ramdon</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus repellat dicta, et minima praesentium autem nihil
+                                    cumque officiis quos fugit, sapiente iste cum labore officia vitae ad earum fugiat excepturi.
+                                </p>
                             </div>
                         </div>
-
                     </div>
                     <div class="col-md-4 pb-3">
-                            <div class="card">
-                                    <img src="img/woman.jpg" class="card-img-top" alt="mujer usando una notebook">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Otra feature de Balance</h5>
-                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus repellat dicta, et minima praesentium autem nihil cumque officiis quos fugit, sapiente iste cum labore officia vitae ad earum fugiat excepturi.</p>
-                                    </div>
-                                </div> 
-                    </div>
-                    <div class="col-md-4 pb-3">
-                            <div class="card">
-                                    <img src="img/phone.jpg" class="card-img-top" alt="mujer usando un celular">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Es una app para cel y tablets</h5>
-                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus repellat dicta, et minima praesentium autem nihil cumque officiis quos fugit, sapiente iste cum labore officia vitae ad earum fugiat excepturi.</p>
-                                    </div>
+                        <div class="card">
+                            <img src="img/woman.jpg" class="card-img-top" alt="mujer usando una notebook" />
+                            <div class="card-body">
+                                <h5 class="card-title">Otra feature de Balance</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus repellat dicta, et minima praesentium autem nihil
+                                    cumque officiis quos fugit, sapiente iste cum labore officia vitae ad earum fugiat excepturi.
+                                </p>
                             </div>
+                        </div>
                     </div>
-            </div>       
-                
-        </section>
+                    <div class="col-md-4 pb-3">
+                        <div class="card">
+                            <img src="img/phone.jpg" class="card-img-top" alt="mujer usando un celular" />
+                            <div class="card-body">
+                                <h5 class="card-title">Es una app para cel y tablets</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus repellat dicta, et minima praesentium autem nihil
+                                    cumque officiis quos fugit, sapiente iste cum labore officia vitae ad earum fugiat excepturi.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <footer class="container footer-index">
+            <footer class="container footer-index">
                 <div class="row justify-content-center align-items-center">
-                   <div class="col-md-3 d-flex flex-column justify-content-center align-items-center mt-4">
-                       <label for="telefono" class="text-white"> <i class="fa fa-phone-square" aria-hidden="true"></i>  Teléfono</label>
-                       <p class="text-white">+54 011 487 8726</p>
-                       <label for="Email" class="text-white"><i class="fas fa-mail-bulk    "></i>  Email</label>
-                       <p class="text-white">balance@info.com.ar</p>
-                   </div>
-                   <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
-                        <address class="text-white mt-4"> <i class="fa fa-home" aria-hidden="true"></i>   CABA Argentina Medrano al algo</address>
-                           
-                            <div class="embed-responsive embed-responsive-21by9 div-iframe">
-                                   <iframe class="embed-responsive-item" allowtransparency="allowtransparency" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1952.8381930513701!2d-58.41784967143386!3d-34.59735187309996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca7cd54f107b%3A0xe12d5c447bb9f5a3!2sUTN+-+F.R.B.A!5e0!3m2!1ses!2sar!4v1555524625772!5m2!1ses!2sar" allowfullscreen></iframe>
-                            </div>  
-                    
-                   </div>
-                   <div class="col-md d-flex flex-column justify-content-center align-items-center mt-4">
-                       
-                            <h5 class="text-white">Newsletter</h5>
-                                <p class="text-white">Subcribite a nuestro newsletter para tener todas las noticas y updates sobre Blanace.</p>
-                                    <form action="" method="POST">
-                                        <div class="form-group">
-                                            <div class="input-group input-group-md">
-                                                <input type="email" name="mail-newsletter" id="" class="control-form" placeholder="Ingresa tu email">
-                                                <div class="input-group-append">
-                                                <button type="submit" class="btn btn-outline-light btn-sm">
-                                                    <span class="fa fa-paper-plane" aria-hidden="true"></span>
-                                                </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                        
-                   </div>
+                    <div class="col-md-3 d-flex flex-column justify-content-center align-items-center mt-4">
+                        <label for="telefono" class="text-white">
+                            <i class="fa fa-phone-square" aria-hidden="true"></i>
+                            Teléfono</label
+                        >
+                        <p class="text-white">+54 011 487 8726</p>
+                        <label for="Email" class="text-white"><i class="fas fa-mail-bulk    "></i> Email</label>
+                        <p class="text-white">balance@info.com.ar</p>
+                    </div>
+                    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+                        <address class="text-white mt-4"><i class="fa fa-home" aria-hidden="true"></i> CABA Argentina Medrano al algo</address>
+
+                        <div class="embed-responsive embed-responsive-21by9 div-iframe">
+                            <iframe
+                                class="embed-responsive-item"
+                                allowtransparency="allowtransparency"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1952.8381930513701!2d-58.41784967143386!3d-34.59735187309996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca7cd54f107b%3A0xe12d5c447bb9f5a3!2sUTN+-+F.R.B.A!5e0!3m2!1ses!2sar!4v1555524625772!5m2!1ses!2sar"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>
+                    <div class="col-md d-flex flex-column justify-content-center align-items-center mt-4">
+                        <h5 class="text-white">Newsletter</h5>
+                        <p class="text-white">
+                            Subcribite a nuestro newsletter para tener todas las noticas y updates sobre Blanace.
+                        </p>
+                        <form action="" method="POST">
+                            <div class="form-group">
+                                <div class="input-group input-group-md">
+                                    <input type="email" name="mail-newsletter" id="" class="control-form" placeholder="Ingresa tu email" />
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-outline-light btn-sm">
+                                            <span class="fa fa-paper-plane" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col d-flex flex-column justify-content-center align-items-center"><p class="text-white copyrights "> © 2019 Balace. All rights reserved | Design by Luciano Berardi Rosmarin.</p></div>
+                    <div class="col d-flex flex-column justify-content-center align-items-center">
+                        <p class="text-white copyrights ">
+                            © 2019 Balace. All rights reserved | Design by Luciano Berardi Rosmarin.
+                        </p>
+                    </div>
                 </div>
-           </footer>
-       
-</div>
-       
-</body>
+            </footer>
+        </div>
+    </body>
 </html>
