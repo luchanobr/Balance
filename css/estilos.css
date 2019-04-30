@@ -2,6 +2,16 @@
     background: rgba(255, 255, 255, 0.6) !important;
     z-index: 99 !important;
 }
+.nav-index {
+    width: inherit;
+    max-width: inherit ;
+    position: fixed;
+    z-index: 99;
+    background: rgba(255, 255, 255, 0.6) !important;
+}
+.nav-index:hover{
+    background: rgba(255, 255, 255, 0.9) !important;
+}
 .social a:hover {
     color: #ed830c !important;
 }
@@ -13,11 +23,11 @@
     color: #ed830c !important;
 }
 .header-index {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) , url("../img/header.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) , url("../img/header.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 500px;
+    height: 100vh;
 }
 .h1-header,
 .h2-header,
@@ -27,8 +37,21 @@
 }
 .main-index {
     background: linear-gradient(to bottom, rgba(247, 236, 223, 1), rgba(247, 236, 223, 0));
+    padding: 50px;
 }
 
+.main-article {
+    
+    border: 3px solid rgba(172, 169, 169, 0.952);
+}
+.p-main{
+    padding-right: 75px;
+    padding-left: 75px;
+}
+.imagen-main {
+    margin-left: -150px;
+    box-shadow: 2rem 2rem 3rem gray;
+}
 .footer-index {
     background: linear-gradient(to bottom, rgba(31, 24, 17, 0.62), rgb(27, 17, 12));
 }
@@ -41,8 +64,14 @@
     background-color: white;
     border: 5px solid rgba(180, 183, 185, 0.404);
 }
+.blog-cat{
+    float: left;
+}
+.blog-can {
+    float: right;
+}
 .clientes {
-    background-image: url("../img/clientes.jpg");
+    background-image: url("../img/premiofondo.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -51,8 +80,8 @@
 .cliente-item1,
 .cliente-item2,
 .cliente-item3 {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     align-self: center;
     font-size: 2rem;
 }
@@ -68,11 +97,12 @@
 .cliente-text {
     font-size: 1.2rem;
     font-weight: 500;
+    color: #ed830c;
 }
 .h3-noticias::after {
     content: "";
     height: 3px;
-    width: 100%;
+    width: 150%;
     background-color: #ed830c;
     bottom: 3px;
     display: block;
@@ -134,15 +164,19 @@
     overflow: hidden;
 }
 .div-iframe {
-    background-color: rgb(0, 174, 255);
-    opacity: 0.9;
+    background-color: rgba(255, 115, 0, 0.3);
+    opacity: 0.6;
 }
 
 @media (max-width: 991px) {
     .registro {
         background-color: rgba(255, 255, 255, 0.5);
     }
+    .imagen-main {
+        margin-left: 0px;
+    }
 }
+
 
 @media (max-width: 768px) {
     .div-registro {
@@ -150,6 +184,10 @@
     }
     .registro {
         height: auto;
+    }
+    .p-main {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
 
