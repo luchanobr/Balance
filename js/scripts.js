@@ -1,7 +1,7 @@
 $(document).ready(function(){
      $('.owl-carousel').owlCarousel({
         center: false,
-        items:3,
+        items:5,
         loop:true,
         margin: 20,
         nav:true,
@@ -14,7 +14,7 @@ $(document).ready(function(){
                 nav: true
             },
             1000:{
-                items:3,
+                items:4,
                 nav: true,
             }
         }

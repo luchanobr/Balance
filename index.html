@@ -38,8 +38,8 @@
         <script src="js/scripts.js"></script>
         <script src="js/owl.carousel.min.js"></script>
     </head>
-    <body>
-        <div class="container">
+    <body id="body-index">
+        <div class="container-fluid">
 
             <!-- Barra de navegacion -->
 
@@ -95,7 +95,7 @@
 
             <!-- Hero Banner -->
 
-            <header class="container">
+            <header class="container-fluid">
 
                 <div class="row header-index justify-content-center align-items-center">
 
@@ -111,7 +111,7 @@
 
             <!-- MAIN PRINCIPAL -->
 
-            <section class="container">
+            <section class="container main">
 
                 <div class="row mt-4 main-index">
 
@@ -234,7 +234,7 @@
 
             <!-- Carusel de card con features de la app-->
 
-            <section>
+            <section class="container-fluid">
 
                 <!--Cada card a mostrar en el carusel-->
                 
@@ -295,69 +295,74 @@
 
             </section>
 
-            <!-- FOOTER -->
+        </div>
 
-            <footer class="container footer-index mt-3">
+         <!-- FOOTER -->
 
-                <div class="row justify-content-center align-items-center">
+        <footer class=" footer-index mt-3">
 
-                    <!-- TELEFONO Y MAIL  -->
+            <div class="row justify-content-center align-items-center">
 
-                    <div class="col-md-3 d-flex flex-column justify-content-center align-items-center mt-4">
-                        <label for="telefono" class="text-white">
-                            <i class="fa fa-phone-square" aria-hidden="true"></i>
-                            Teléfono</label
-                        >
-                        <p class="text-white">+54 011 487 8726</p>
-                        <label for="Email" class="text-white"><i class="fas fa-mail-bulk    "></i> Email</label>
-                        <p class="text-white">balance@info.com.ar</p>
+                <!-- TELEFONO Y MAIL  -->
+
+                <div class="col-md-3 d-flex flex-column justify-content-center align-items-center mt-4">
+                    <label for="telefono" class="text-white">
+                        <i class="fa fa-phone-square" aria-hidden="true"></i>
+                        Teléfono</label
+                    >
+                    <p class="text-white">+54 011 487 8726</p>
+                    <label for="Email" class="text-white"><i class="fas fa-mail-bulk    "></i> Email</label>
+                    <p class="text-white">balance@info.com.ar</p>
+                </div>
+
+                <!-- Direccion con iframe de google maps -->
+
+                <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+                    <address class="text-white mt-4"><i class="fa fa-home" aria-hidden="true"></i> CABA Argentina Medrano al algo</address>
+
+                    <div class="embed-responsive embed-responsive-21by9 div-iframe">
+                        <iframe
+                            class="embed-responsive-item"
+                            allowtransparency="allowtransparency"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1952.8381930513701!2d-58.41784967143386!3d-34.59735187309996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca7cd54f107b%3A0xe12d5c447bb9f5a3!2sUTN+-+F.R.B.A!5e0!3m2!1ses!2sar!4v1555524625772!5m2!1ses!2sar"
+                            allowfullscreen
+                        ></iframe>
                     </div>
+                </div>
 
-                    <!-- Direccion con iframe de google maps -->
+                <!--NEWSLETTER  -->
 
-                    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
-                        <address class="text-white mt-4"><i class="fa fa-home" aria-hidden="true"></i> CABA Argentina Medrano al algo</address>
-
-                        <div class="embed-responsive embed-responsive-21by9 div-iframe">
-                            <iframe
-                                class="embed-responsive-item"
-                                allowtransparency="allowtransparency"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1952.8381930513701!2d-58.41784967143386!3d-34.59735187309996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca7cd54f107b%3A0xe12d5c447bb9f5a3!2sUTN+-+F.R.B.A!5e0!3m2!1ses!2sar!4v1555524625772!5m2!1ses!2sar"
-                                allowfullscreen
-                            ></iframe>
-                        </div>
-                    </div>
-
-                    <!--NEWSLETTER  -->
-
-                    <div class="col-md d-flex flex-column justify-content-center align-items-center mt-4">
-                        <h5 class="text-white">Newsletter</h5>
-                        <p class="text-white">
-                            Subcribite a nuestro newsletter para tener todas las noticas y updates sobre Blanace.
-                        </p>
-                        <form action="" method="POST">
-                            <div class="form-group">
-                                <div class="input-group input-group-md">
-                                    <input type="email" name="mail-newsletter" id="" class="control-form" placeholder="Ingresa tu email" />
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-outline-light btn-sm">
-                                            <span class="fa fa-paper-plane" aria-hidden="true"></span>
-                                        </button>
-                                    </div>
+                <div class="col-md d-flex flex-column justify-content-center align-items-center mt-4">
+                    <h5 class="text-white">Newsletter</h5>
+                    <p class="text-white">
+                        Subcribite a nuestro newsletter para tener todas las noticas y updates sobre Blanace.
+                    </p>
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <div class="input-group input-group-md">
+                                <input type="email" name="mail-newsletter" id="" class="control-form" placeholder="Ingresa tu email" />
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-outline-light btn-sm">
+                                        <span class="fa fa-paper-plane" aria-hidden="true"></span>
+                                    </button>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
+                </div>
 
+            </div>
+
+            <div class="row">
+
+                <div class="col d-flex flex-column justify-content-center align-items-center">
+                    <p class="text-white copyrights ">
+                        © 2019 Balace. All rights reserved | Design by Luciano Berardi Rosmarin.
+                    </p>
                 </div>
-                <div class="row">
-                    <div class="col d-flex flex-column justify-content-center align-items-center">
-                        <p class="text-white copyrights ">
-                            © 2019 Balace. All rights reserved | Design by Luciano Berardi Rosmarin.
-                        </p>
-                    </div>
-                </div>
-            </footer>
-        </div>
+
+            </div>
+
+        </footer>
     </body>
 </html>
