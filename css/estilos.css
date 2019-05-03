@@ -1,15 +1,18 @@
+
 .barra {
     background: rgba(255, 255, 255, 0.6) !important;
     z-index: 99 !important;
 }
 #body-index{
-    background-image:  linear-gradient(rgba(240, 240, 240, 0.8), rgba(238, 238, 238, 0.8)) ,url("../img/pesos.jpg");
+    background-image:  linear-gradient(rgba(240, 240, 240, 0.9), rgba(238, 238, 238, 0.9)) ,url("../img/pesos.jpg");
     background-repeat: repeat;
     background-size: 250px 250px;
     z-index: -1;
+    overflow-x: hidden;
 }
 .main {
     background-color: white;
+    max-width: 1400px;
 }
 .nav-index {
     width: inherit;
@@ -19,7 +22,7 @@
     background: rgba(255, 255, 255, 0.6) !important;
 }
 .nav-index:hover{
-    background: rgba(255, 255, 255, 0.9) !important;
+    background: rgba(255, 255, 255, 1) !important;
 }
 .social a:hover {
     color: #ed830c !important;
@@ -43,6 +46,43 @@
 .h3-header {
     color: #ed830c;
     font-weight: 700;
+}
+.h2-header{
+    margin-top: 30vh;
+}
+.div-scroll{
+    margin-top: 5rem;
+}
+#btnHeroComenzar{
+   margin-top: 3rem;
+   border-color:  #ed830c !important;
+   border-width: 3px;
+   color: #ed830c;
+   width: 200px;
+   height: 85px;
+   font-size: 1.3rem;
+}
+#btnHeroComenzar:focus, #btnHeroComenzar:hover {
+    box-shadow: 0 0 0 0.2rem rgba(243, 148, 6, 0.856);
+    color:white;
+    background-color: #ed830c;
+}
+
+#scrollDown{
+    color: #ed830c;
+    font-size: 32px;  
+}
+.fa-angle-double-down:hover{
+    display: inline-block;
+    position: relative;
+    animation: bounce 0.5s infinite linear;
+    
+}
+@keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
 }
 .main-index {
     background: linear-gradient(to bottom, rgba(247, 236, 223, 1), rgba(247, 236, 223, 0));
