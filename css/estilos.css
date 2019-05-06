@@ -101,6 +101,46 @@
     margin-left: -150px;
     box-shadow: 2rem 2rem 3rem gray;
 }
+.ct-chart {
+    margin-top: 250px;
+}
+.numero-fondo {
+    position: absolute;
+    left: 15%;
+    color: rgba(46, 46, 46, 0.153);
+    z-index: 1;
+    font-weight: 800;
+}
+.h5-razones{
+    z-index: 3;
+}
+.caja-razones{
+    height: 150px;
+    border-bottom: 1px solid gray;
+}
+.imagen-blog {
+    width: 850px;
+    height: 250px;
+
+}
+.ul-blog{
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    bottom: 0px;
+    margin-bottom: 0px;
+}
+.ul-blog li {
+    display: inline-block;
+    margin-left: 1rem;
+}
+.ul-blog a {
+    text-decoration: none;
+    color: #000;
+}
+.arrow-blog  {
+    padding-left: 10px;
+}
 .footer-index {
     background-color: rgb(19, 15, 12);
 }
@@ -155,6 +195,10 @@
     background-color: #ed830c;
     bottom: 3px;
     display: block;
+}
+.h3-noticias {
+     margin-top: 20%;
+     margin-bottom: 15px;
 }
 .div-login {
     background-image: url("../img/coffee-2425294_1920.jpg");
@@ -224,6 +268,9 @@
     .imagen-main {
         margin-left: 0px;
     }
+    .h3-noticias {
+        margin-top: 0rem;
+   }
 }
 
 
@@ -238,6 +285,7 @@
         padding-left: 2rem;
         padding-right: 2rem;
     }
+    
 }
 
 @media (max-width: 768px) {

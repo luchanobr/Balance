@@ -20,6 +20,7 @@
             integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" integrity="sha256-Te9+aTaL9j0U5PzLhtAHt+SXlgIT8KT9VkyOZn68hak=" crossorigin="anonymous">
         <script
 			  src="https://code.jquery.com/jquery-3.4.0.min.js"
 			  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
@@ -36,6 +37,7 @@
         ></script>
         <script src="js/scripts.js"></script>
         <script src="js/owl.carousel.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.js" integrity="sha256-UzffRueYhyZDw8Cj39UCnnggvBfa1fPcDQ0auvCbvCc=" crossorigin="anonymous"></script>
     </head>
     <body id="body-index">
         <div class="container-fluid">
@@ -114,7 +116,7 @@
 
             </header>
 
-            <!-- MAIN PRINCIPAL -->
+                <!-- MAIN PRINCIPAL -->
 
             <section class="container main mt-2">
 
@@ -156,15 +158,84 @@
 
                 </div>
 
+
+             <!-- Razones de Balance -->
+
+             <div class="row mt-5">
+
+                <div class="row w-100">
+                    <div class="col offset-1"><h2>3 Razones para usar Balance</h2></div>  
+                    
+                </div>
+
+                <div class="row ml-0  w-100">
+
+                    <div class="col-lg-4">
+                        <div class="ct-chart mx-4 d-flex justify-content-center"></div>
+                        <div class="position-relative caja-razones my-5 d-flex justify-content-center align-items-center">
+                           <h2 class="display-1 numero-fondo position-absolute">1</h2>
+                           <h5 class="text-center h5-razones">Graficos y estadisticas incorporadas</h5>
+                       </div> 
+                      
+                    </div>
+                    <div class="col-lg-4">
+
+                        <div class="mx-4">
+                            <img src="img/pdf_upload.png" alt="" class="pdf-up position-absolute img-thumbnail">
+                            <img src="img/donw_pdf.png" alt="" class="pdf-down img-thumbnail">
+                        </div>
+
+                        <div class="position-relative caja-razones my-5 d-flex justify-content-center align-items-center">
+                            <h2 class="display-1 numero-fondo position-absolute">2</h2>
+                            <h5 class="text-center h5-razones">Subir archivos y exportar PDF</h5>
+                        </div> 
+
+                    </div>
+                    <div class="col-lg-4">
+
+                            <div class="position-relative caja-razones my-5 d-flex justify-content-center align-items-center">
+                                    <h2 class="display-1 numero-fondo position-absolute">3</h2>
+                                    <h5 class="text-center h5-razones">Calculadora, Calendario y más</h5>
+                            </div> 
+
+                    </div>
+                    
+                </div>
+
+             </div>
+
+
              <!--  BLOG -->
 
                 <div class="row mt-5">
 
                     <!-- articulo del blog -->
 
-                    <div class="col-8">
+                    <div class="col-lg-8">
                       
-                        <articcle>
+                        <articcle class="row">
+
+                            <div class="div-imagen-blog w-100 mx-5 position-relative">
+                                <img src="img/imagenblog.jpg" alt="imagen del blog" class="img-fluid imagen-blog ">
+                                <ul class="ul-blog bg-light px-2 ">
+                                    <li><a href="#">
+                                        <i class="fas fa-user    "></i> Admin</a>
+                                    </li>
+                                    <li>    
+                                        <a href="http:#"><i class="fa fa-calendar" aria-hidden="true"></i> 27 de abril de 2019</a>
+                                    </li>
+                                    <li>
+                                        <a href="http:#"> <i class="fa fa-comment" aria-hidden="true"></i> 4 Comentarios</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="articulo-blog w-100 mx-5 my-3">
+                                <a href="http://" class="text-decoration-none text-dark"><h2>Titulo del articulo del blog</h2></a>
+                                <h4>Copete del blog</h4>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus deleniti nostrum sequi numquam soluta laboriosam fugit saepe dolor reprehenderit accusamus. Reiciendis facere debitis inventore cum deserunt similique voluptas obcaecati asperiores!</p>
+                                <button type="button" class="btn btn-light" id="blogButton">Leer mas  <i class="fa fa-arrow-right " id="arrow" aria-hidden="true"></i></button>
+                            </div>
 
                         </articcle>
 
@@ -176,7 +247,7 @@
 
                         <div class="aside1-index col m-3 d-flex flex-column justify-content-center align-items-start">
 
-                            <h3 class="pl-3 h3-noticias pt-4 py-lg-0 mt-3">Blog</h3>
+                            <h3 class="pl-3 h3-noticias pt-4 py-lg-0">Blog</h3>
 
                             <ul class="nav flex-column pb-3 py-lg-2 col">
                                 <li class="nav-item">
