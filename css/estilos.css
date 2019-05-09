@@ -118,6 +118,28 @@
     height: 150px;
     border-bottom: 1px solid gray;
 }
+.caja-pdf{
+    height: 250px;
+    margin-top: 105px;
+}
+.pdf-up {
+    width: 150px;
+    height: 150px;
+    right: 20%;
+    bottom: 10%;
+    z-index: 2;
+}
+.pdf-down {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+}
+.caja-app {
+    margin-top: 70px;
+    height: 200px;
+}
 .imagen-blog {
     width: 850px;
     height: 250px;
