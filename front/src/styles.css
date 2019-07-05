@@ -1,0 +1,71 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@font-face {
+    font-family: "unit-bold";
+    src: url(assets/fonts/Unit-Bold.otf) format("opentype"); 
+}
+@font-face {
+    font-family: "unit-light";
+    src: url(assets/fonts/Unit-Light.otf) format("opentype"); 
+}
+@font-face {
+    font-family: "unit-regular";
+    src: url(assets/fonts/Unit-Regular.otf) format("opentype"); 
+}
+@font-face {
+    font-family: "unit-thin";
+    src: url(assets/fonts/Unit-Thin.otf) format("opentype"); 
+}
+@font-face {
+    font-family: "unit-medium";
+    src: url(assets/fonts/Unit-Medium.otf) format("opentype"); 
+}
+
+* {
+    font-family: "unit-regular" ;
+}
+.mat-drawer-container {
+    background-color: white;
+}
+.mat-dialog-container{
+    padding: 10px !important;
+}
+.unit-light {
+    font-family: "unit-ligth";
+}
+.unit-thin {
+    font-family: "unit-thin";
+}
+.unit-bold {
+    font-family: "unit-bold";
+}
+.unit-medium {
+    font-family: "unit-medium"
+}
+
+.alert-center {
+    margin-bottom: 82vh !important;
+}
+@media (max-width: 768px) {
+    body {
+        font-size: 0.8rem !important;
+    }
+    h1 {
+        font-size: 2rem !important;
+        font-weight: 600 !important;
+    }
+    h2 {
+        font-size: 1.8rem !important;
+    }
+    h3 {
+        font-size: 1.1rem !important;
+    }
+    h4 {
+        font-size: 1rem !important  ;
+    }
+}
+*:focus {
+    outline: none;
+}
+.vh {
+    height: 60vh;
+}

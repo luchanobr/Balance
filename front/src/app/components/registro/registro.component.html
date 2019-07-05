@@ -1,0 +1,60 @@
+<div class="container vh">
+
+  <div class="card mt-3 border-primary">
+    <div class="card-header bg-primary">
+      <h2 class="text-center text-white ">Registro</h2>
+    </div>
+    <form [formGroup]="registroForm" (ngSubmit)="registro(registroForm.value)">
+      <div class="card-body">
+
+        <div class="row">
+          <mat-form-field class="col-lg-6 col-md-12">
+            <input matInput type="text" placeholder="Nombre" formControlName="nombre">
+            <mat-error *ngIf="registroForm.controls.nombre.errors">{{errorNombre()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-lg-6 col-md-12">
+            <input matInput type="text" placeholder="Apellido" formControlName="apellido">
+            <mat-error *ngIf="registroForm.controls.apellido.errors">{{errorApellido()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-12">
+            <input matInput type="email" placeholder="Mail" formControlName="mail">
+            <mat-error *ngIf="registroForm.controls.mail.errors">{{errorMail()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-lg-6 col-md-12" hintLabel="Max 15 caracteres">
+            <input matInput type="password" #pass placeholder="Password" formControlName="password" (blur)="confirmarPassword()">
+            <mat-hint align="end">{{pass.value?.length || 0}}/15</mat-hint>
+            <mat-error *ngIf="registroForm.controls.password.errors">{{errorPassword()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-lg-6 col-md-12">
+            <input matInput type="password" placeholder="Repetir password" formControlName="repetirPassword" (blur)="confirmarPassword()">
+            <mat-error *ngIf="registroForm.controls.repetirPassword.errors">{{errorRepetirPassword()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-lg-6 col-md-12">
+            <mat-label>Genero</mat-label>
+            <mat-select formControlName="genero">
+              <mat-option *ngFor=" let genero of generos" [value]="genero.genero">{{genero.genero}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="registroForm.controls.genero.errors">{{errorGenero()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-lg-6 col-md-12">
+            <input matInput [matDatepicker]="myDatepicker" placeholder="Fecha de nacimiento" formControlName="fecnac">
+            <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker startView="multi-year"></mat-datepicker>
+            <mat-error *ngIf="registroForm.controls.fecnac.errors">{{errorFecnac()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="col-lg-6 col-md-12">
+            <input matInput type="tel" placeholder="Telefono" formControlName="telefono">
+            <mat-error *ngIf="registroForm.controls.telefono.errors">{{errorTelefono()}}</mat-error>
+          </mat-form-field>
+
+        </div>
+      </div>
+      <div class="card-footer bg-primary">
+        <div class="row justify-content-center"> 
+          <button mat-raised-button class="btn btn-success col-4" [disabled]="registroForm.invalid" type="submit">Registrarse</button></div>
+      </div>
+    </form>
+  </div>
+
+
+</div>

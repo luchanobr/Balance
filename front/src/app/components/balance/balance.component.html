@@ -1,0 +1,88 @@
+
+  <div class="card border-primary m-0 p-0">
+       <div class="card-header"> <h5 mat-dialog-title class="text-center text-primary my-1">{{data.titulo}}</h5> </div>
+       <form [formGroup]="balanceForm" (ngSubmit)="sendBalance(balanceForm.value)">
+        
+            <mat-vertical-stepper #stepper linear='false'>
+           <mat-step>
+              <ng-template matStepLabel>Tipo de Balance</ng-template>
+                  <mat-radio-group  formControlName="tipo"  class="col my-1">
+                    <div class="d-flex flex-column">
+                        <mat-radio-button value="0"> Gasto</mat-radio-button>
+                        <mat-radio-button value="1"> Ingreso</mat-radio-button>
+                    </div>
+                  </mat-radio-group>
+           
+                <button mat-button type="button" matStepperNext>Next</button>
+           </mat-step>
+
+          <mat-step>
+              <ng-template matStepLabel>Monto</ng-template>
+                <mat-form-field class="col my-1">  
+                  <input matInput type="text" placeholder="Monto" formControlName="monto">
+                  <mat-error *ngIf=""></mat-error>
+                </mat-form-field>
+                <button mat-button type="button" matStepperPrevious>Back</button>
+                <button mat-button  type="button" matStepperNext>Next</button>
+              </mat-step>
+              
+           <mat-step>
+              <ng-template matStepLabel>Fecha</ng-template>
+                <mat-form-field class="col my-1">
+                  <input matInput [matDatepicker]="balanceDatepicker" placeholder="Fecha" formControlName="fecha" [value]="data.balance.fecha">
+                  <mat-datepicker-toggle matSuffix [for]="balanceDatepicker"></mat-datepicker-toggle>
+                  <mat-datepicker #balanceDatepicker [startAt]="hoy"></mat-datepicker>
+                  <mat-error *ngIf=""></mat-error>
+                </mat-form-field>
+                <button mat-button type="button"  matStepperPrevious>Back</button>
+                <button mat-button type="button" matStepperNext>Next</button>
+              </mat-step>
+
+              <mat-step>
+                  <ng-template matStepLabel>Concepto y Forma</ng-template>
+              <mat-form-field *ngIf="balanceForm.controls.tipo.value==0" class="col my-1">
+                <mat-label>Concepto</mat-label>
+              <mat-select  formControlName="concepto"> 
+                <mat-option  *ngFor=" let concepto of conceptosGastos" [value]="concepto.concepto">{{concepto.concepto}}</mat-option>
+              </mat-select>
+              
+              <mat-error *ngIf=""></mat-error>
+            </mat-form-field>
+              <mat-form-field *ngIf="balanceForm.controls.tipo.value==1" class="col my-1">
+                <mat-label>Concepto</mat-label>
+
+              <mat-select  formControlName="concepto"> 
+                <mat-option   *ngFor=" let concepto of conceptosIngresos" [value]="concepto.concepto">{{concepto.concepto}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf=""></mat-error>
+            </mat-form-field>
+            <mat-form-field class="col my-1">
+              <mat-label>Forma</mat-label>
+            <mat-select  formControlName="forma"> 
+              <mat-option *ngFor=" let forma of formas" [value]="forma.forma">{{forma.forma}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf=""></mat-error>
+          </mat-form-field>
+          
+          <button mat-button type="button" matStepperPrevious>Back</button>
+          <button mat-button type="button" matStepperNext>Next</button>
+        </mat-step> 
+         
+        
+        
+         <mat-step>
+            <ng-template matStepLabel>Enviar</ng-template>
+             
+               <div class="col my-1 d-flex justify-content-center">
+                  <button type="submit" mat-raised-button class="btn btn-outline-success mr-1 btn-sm" [disabled]="balanceForm.invalid" (click)="dialogRef.close()">Enviar</button>
+                  <button mat-raised-button  type="button" class="btn btn-outline-info mr-1 btn-sm" matStepperPrevious>Back</button>
+                  <button mat-raised-button  type="button" class="btn btn-outline-danger mr-1 btn-sm" (click)="stepper.reset()">Reset</button>
+                  <button type="button" mat-raised-button class="btn btn-outline-primary btn-sm" (click)="dialogRef.close()">Close</button> 
+               </div>
+         </mat-step>
+           
+          </mat-vertical-stepper>
+      
+       </form>
+  </div>
+    

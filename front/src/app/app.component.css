@@ -1,0 +1,22 @@
+.margin {
+    margin-top: 64px;
+}
+.footer {
+    
+    bottom: 0;
+    width:100%;
+        
+}
+.sidenav {
+    width: 280px;
+    background-color: white;
+
+}
+.head-sidenav {
+    background-image: linear-gradient(rgba(44, 60, 80, 0.35), rgba(44, 60, 80, 0.35)),url("../assets/img/hero-baner.jpg");
+    height: 80px;
+    width: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

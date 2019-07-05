@@ -1,0 +1,28 @@
+
+<div class="container vh">
+  <div class="card  border-primary mt-5">
+    <div class="card-header">
+     <h2 class="text-center text-primary"> Login</h2>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+      <div class="card-body">
+        <mat-form-field class="col my-1">  
+          <input matInput type="email" placeholder="Email"  formControlName="mail">
+           <mat-error *ngIf="loginForm.controls.mail.errors">{{errorMail()}} </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col my-1">  
+          <input matInput type="password" placeholder="Password" formControlName="password">
+         <mat-error *ngIf="loginForm.controls.password.errors">{{errorPassword()}}</mat-error>
+        </mat-form-field>
+            
+        <small class="col-6 text-muted"(click)="recuperarPassword()">Olvidaste tu password?</small>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+       <button mat-raised-button class="btn btn-success col-2" type="submit" [disabled]="loginForm.invalid" >Login</button>
+       <button mat-stroked-button class="btn btn-outline-primary col-2" routerLink="/registro">Registrarse</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+

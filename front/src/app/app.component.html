@@ -1,0 +1,47 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<ngx-loading-bar [color]="'#18BC9C'" [includeSpinner]="false"></ngx-loading-bar>
+<app-navbar (sidenav)="sidenav.toggle($event)"></app-navbar> 
+
+<mat-drawer-container hasBackdrop="true" class="margin"> 
+   
+    <mat-drawer #sidenav mode="push"  class="sidenav" > 
+
+        <div class="row mx-0 d-flex justify-content-center head-sidenav align-content-center">
+            <h2 class="text-center text-white">Balance</h2>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div class="row mx-0 my-4">
+            <ul id="nav-mobile" class=" navbar-nav ml-3">
+                <li class="nav-item mx-4 " routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                    true}"(click)="sidenav.toggle()"><a  class="nav-link unit-thin" >Home</a></li>
+                <li class="nav-item mx-4 "routerLink="/login"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                    true}"(click)="sidenav.toggle()"><a class="nav-link unit-thin">login</a></li>
+                <li class="nav-item mx-4 "routerLink="/registro" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                    true}"(click)="sidenav.toggle()"><a  class="nav-link unit-thin">Registro</a></li>
+                <li class="nav-item mx-4 "routerLink="/contacto" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                    true}"(click)="sidenav.toggle()"><a  class="nav-link unit-thin">Contacto</a></li>
+            </ul>
+        </div>
+        <mat-divider></mat-divider>
+        <div  *ngIf="login" class=" row mx-0 my-4">
+            <ul id="nav-user" class="navbar-nav ml-3">
+                <li class="nav-item mx-4"[routerLink]="['/usuarios', usuario.nombre]" (click)="sidenav.toggle()" ><a class="nav-link unit-thin"><i class="fa fa-user-o" aria-hidden="true"></i> {{usuario.nombre}}</a></li>
+                <li class="nav-item mx-4"(click)="sidenav.toggle()"><a class="nav-link unit-thin"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
+                <li class="nav-item mx-4" routerLink="/home" (click)="sidenav.toggle()"><a class="nav-link unit-thin" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"> </i> Logout</a></li>
+            </ul>
+        </div>
+    </mat-drawer>
+  
+    <mat-drawer-content>
+        
+       
+
+             <router-outlet></router-outlet>
+        
+        
+
+    </mat-drawer-content>
+
+</mat-drawer-container>
+<div class="footer mt-5"><app-footer></app-footer></div>

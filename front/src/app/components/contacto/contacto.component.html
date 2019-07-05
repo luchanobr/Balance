@@ -1,0 +1,30 @@
+<div class="container vh">
+  <div class="card border-primary mt-5">
+    <div class="card-header bg-primary">
+     <h2 class="text-center text-info">Contacto</h2>
+    </div>
+    <form [formGroup]="contactoForm" (ngSubmit)="contacto(contactoForm.value)">
+      <div class="card-body">
+        <mat-form-field class="col my-1">  
+          <input matInput type="text" placeholder="Nombre"  formControlName="nombre">
+           <mat-error *ngIf="contactoForm.controls.mail.errors">{{errorNombre()}} </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col my-1">  
+          <input matInput type="email" placeholder="Email"  formControlName="mail">
+           <mat-error *ngIf="contactoForm.controls.mail.errors">{{errorMail()}} </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col my-1" appearance="outline">  
+          <textarea matInput formControlName="text"></textarea>
+         <mat-error *ngIf="contactoForm.controls.text.errors">{{errorText()}}</mat-error>
+        </mat-form-field>
+            
+        
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+       <button mat-raised-button class="btn btn-info col-2" type="submit" [disabled]="contactoForm.invalid" > <i class="fa fa-paper-plane-o" aria-hidden="true"></i>  Send</button>
+      
+      </div>
+    </form>
+  </div>
+
+</div>

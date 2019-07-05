@@ -1,0 +1,193 @@
+
+<div class="container my-4">
+
+<div class="row mt-1">
+  <div class="col-12 d-flex justify-content-around">
+    <h2 class="text-primary">Balances</h2>
+  </div>
+   <div class="col-12 d-flex ">
+      <h3 class="text-primary">Agregar:</h3>
+     <div class="ml-3">
+        <button mat-raised-button class="btn btn-primary my-2 mr-2" (click)="agregarBalance()"> <i class="fa fa-money" aria-hidden="true"></i>  Balance</button>
+     </div>
+   </div>  
+</div>
+
+<div class="row mt-1">
+<div class="col-12 my-1"><h4 class=" text-primary">Filtros:</h4></div>
+<div class="col-12">
+
+<form [formGroup]="filterForm">
+  
+  <mat-accordion displayMode="default" [multi]="true"
+                 [hideToggle]="false">
+      <mat-expansion-panel [hideToggle]="false">
+          <mat-expansion-panel-header><mat-panel-title> Monto</mat-panel-title> 
+              <mat-panel-description>
+                {{filterForm.controls.monto.value}}
+                </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="col-lg-6 col-12">
+            <mat-radio-group aria-label="Seleccionar tipo de balance:" formControlName="monto" #balancesTipo>
+                <mat-radio-button value="Gastos" class=" mr-2">Gastos</mat-radio-button>
+                <mat-radio-button value="Ingresos" class=" mr-2">Ingresos</mat-radio-button>
+                <mat-radio-button value="Todos" class=" mr-2">Todos</mat-radio-button>
+              </mat-radio-group>
+          </div>
+          <mat-action-row>
+              <button mat-raised-button class="btn btn-outline-primary mr-2"(click)="filtrarBalances()"> <i class="fa fa-search" aria-hidden="true"></i> filtrar</button>
+              <button mat-raised-button class="btn btn-outline-danger"(click)="filterForm.controls.monto.reset()" ><i class="fa fa-eraser" aria-hidden="true"></i>Reset</button>
+          </mat-action-row>
+      </mat-expansion-panel>
+      <mat-expansion-panel [hideToggle]="false">
+          <mat-expansion-panel-header><mat-panel-title> Fecha</mat-panel-title> 
+            <mat-panel-description>
+              {{filterForm.controls.fecha.value | date: "MM/yyyy"}}
+              </mat-panel-description>
+        </mat-expansion-panel-header>
+          <mat-form-field class="col-12">
+              <input matInput [matDatepicker]="myDatepicker" placeholder="Mes y Año" formControlName="fecha" [value]="filterForm.controls.fecha.value " >
+              <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+              <mat-datepicker #myDatepicker startView="multi-year"  (yearSelected)="chosenYearHandler($event)" (monthSelected)="cerrarDatePicker($event, myDatepicker)"></mat-datepicker>
+             
+            </mat-form-field>
+          <mat-action-row>
+              <button mat-raised-button class="btn btn-outline-primary mr-2" (click)="filtrarBalances()"> <i class="fa fa-search" aria-hidden="true"></i> filtrar</button>
+              <button mat-raised-button class="btn btn-outline-danger" (click)="filterForm.controls.fecha.reset()" ><i class="fa fa-eraser" aria-hidden="true"></i> Reset</button>
+          </mat-action-row>
+      </mat-expansion-panel>
+      <mat-expansion-panel [hideToggle]="false">
+          <mat-expansion-panel-header><mat-panel-title> Concepto</mat-panel-title> 
+            <mat-panel-description>
+              {{filterForm.controls.concepto.value}}
+              </mat-panel-description>
+        </mat-expansion-panel-header>
+          <mat-form-field class="col-12">
+              <mat-select placeholder="Concepto" formControlName="concepto" multiple >
+              
+                  <mat-select-trigger>
+                      <span>{{filterForm.controls.concepto.value}}</span>
+                    </mat-select-trigger> 
+                <mat-optgroup *ngFor="let conceptos of todosConceptos" [label]="conceptos.tipo">
+                     
+                  <mat-option *ngFor="let concepto of conceptos" [value]="concepto.concepto">{{concepto.concepto}}</mat-option>
+                </mat-optgroup>
+
+              </mat-select>
+            </mat-form-field>
+          <mat-action-row>
+              <button mat-raised-button class="btn btn-outline-primary mr-2"(click)="filtrarBalances()"> <i class="fa fa-search" aria-hidden="true"></i> filtrar</button>
+              <button mat-raised-button class="btn btn-outline-danger"(click)="filterForm.controls.concepto.reset()" ><i class="fa fa-eraser" aria-hidden="true"></i> Reset</button>
+          </mat-action-row>
+      </mat-expansion-panel>
+      <mat-expansion-panel [hideToggle]="false">
+          <mat-expansion-panel-header><mat-panel-title> Forma</mat-panel-title> 
+            <mat-panel-description>
+              {{filterForm.controls.forma.value}}
+              </mat-panel-description>
+        </mat-expansion-panel-header>
+          <mat-form-field class="col-12">
+            <mat-select placeholder="Forma" formControlName="forma" multiple >
+              <mat-select-trigger>
+                <span>{{filterForm.controls.forma.value}}</span>
+              </mat-select-trigger>
+              <mat-option *ngFor="let forma of formas" [value]="forma.forma">{{forma.forma}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-action-row>
+              <button mat-raised-button class="btn btn-outline-primary mr-2" (click)="filtrarBalances()"> <i class="fa fa-search" aria-hidden="true"></i> filtrar</button>
+              <button mat-raised-button class="btn btn-outline-danger"(click)="filterForm.controls.forma.reset()" ><i class="fa fa-eraser" aria-hidden="true"></i> Reset</button>
+          </mat-action-row>
+      </mat-expansion-panel>
+      <mat-expansion-panel [hideToggle]="false">
+          <mat-expansion-panel-header>Enviar</mat-expansion-panel-header>
+         
+             <div class="d-flex justify-content-end">
+                <button mat-raised-button class="btn btn-outline-primary mr-2"(click)="filtrarBalances()"><i class="fa fa-search" aria-hidden="true"></i> Filtrar Todos</button>
+                <button mat-raised-button class="btn btn-outline-danger" (click)="filterForm.reset()"> <i class="fa fa-eraser" aria-hidden="true"></i> Reset all</button>
+             </div>
+        
+      </mat-expansion-panel>
+  </mat-accordion>
+
+</form>
+</div>
+
+</div>
+
+  <div class="row mt-4">
+   <div class="col card border-primary px-0 ">
+      
+      <mat-table [dataSource]="balances" matSort class="col card px-0 m-0" *ngIf="balances" >
+    
+          <ng-container matColumnDef="monto">
+              <mat-header-cell class="d-flex justify-content-center" mat-sort-header *matHeaderCellDef>  <h5 class="text-center text-white" >Monto</h5>  </mat-header-cell>
+              <mat-cell class="d-flex justify-content-center" *matCellDef="let balance"> {{balance.monto | currency }} </mat-cell>
+              <mat-footer-cell class="d-flex justify-content-center" *matFooterCellDef> <h6 class="text-center text-primary">Total: {{getTotal()|currency}} </h6> </mat-footer-cell>
+            </ng-container>
+          <ng-container matColumnDef="fecha">
+              <mat-header-cell class="d-flex justify-content-center" mat-sort-header *matHeaderCellDef> <h5 class="text-center text-white" >Fecha</h5> </mat-header-cell>
+              <mat-cell class="d-flex justify-content-center" *matCellDef="let balance"> {{balance.fecha | date: 'dd/MM/yyyy'}} </mat-cell>
+              <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
+            </ng-container>
+          <ng-container matColumnDef="concepto">
+              <mat-header-cell class="d-flex justify-content-center" mat-sort-header *matHeaderCellDef> <h5 class="text-center text-white" >Concepto </h5></mat-header-cell>
+              <mat-cell class="d-flex justify-content-center" *matCellDef="let balance"> {{balance.concepto}} </mat-cell>
+              <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
+            </ng-container>
+          <ng-container matColumnDef="forma">
+              <mat-header-cell class="d-flex justify-content-center" mat-sort-header *matHeaderCellDef> <h5 class="text-center text-white" >Forma</h5> </mat-header-cell>
+              <mat-cell class="d-flex justify-content-center" *matCellDef="let balance"> {{balance.forma}} </mat-cell>
+              <mat-footer-cell class="d-flex justify-content-center" *matFooterCellDef> </mat-footer-cell>
+            </ng-container>
+          <ng-container matColumnDef="edit">
+              <mat-header-cell class="d-flex justify-content-center"  *matHeaderCellDef> <h5 class="text-center text-white" >Editar</h5> </mat-header-cell>
+              <mat-cell class="d-flex justify-content-center" *matCellDef="let balance"> <i class="fa fa-pencil-square-o" aria-hidden="true" (click)="openEditarBalance(balance)" ></i></mat-cell>
+              <mat-footer-cell class="d-flex justify-content-center" *matFooterCellDef> </mat-footer-cell>
+            </ng-container>
+          <ng-container matColumnDef="delete">
+              <mat-header-cell class="d-flex justify-content-center"  *matHeaderCellDef> <h5 class="text-center text-white" >Borrar</h5> </mat-header-cell>
+              <mat-cell class="d-flex justify-content-center" *matCellDef="let balance"> <i class="fa fa-trash-o" aria-hidden="true" (click)="deleteBalance(balance.balance_id)"></i> </mat-cell>
+              <mat-footer-cell class="d-flex justify-content-center" *matFooterCellDef> </mat-footer-cell>
+            </ng-container>
+            <mat-header-row class="bg-primary " *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row class="table-hover" *matRowDef="let row; columns: displayedColumns"></mat-row>
+            <mat-footer-row class="bg-light" *matFooterRowDef="displayedColumns"></mat-footer-row>
+            
+      </mat-table>
+      <div class="row justify-content-around bg-success mx-0">
+          <mat-form-field class=" col-10 col-lg-6 ">  
+              <input matInput type="text" placeholder="Search..." (keyup)="searchTable($event.target.value)" class="text-white" >
+            </mat-form-field>
+       <div class="col-lg-6 align-self-center"> <mat-paginator [pageSizeOptions]="[5, 10, 20, 30]" showFirstLastButtons></mat-paginator></div>
+      </div>
+   </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 my-1"><h2 class="text-primary">Estadisticas</h2></div>
+    <div class="col-12 my-1"> 
+      <button class="btn btn-outline-primary col-2" (click)="createBarChart()"><i class="fa fa-bar-chart" aria-hidden="true"></i> Bar Chart</button> 
+      <button class="btn btn-outline-primary col-2 offset-4" (click)="createPieChart()"><i class="fa fa-pie-chart" aria-hidden="true"> Pie Chart</i></button>
+  
+  </div>
+    <div class="col-12 col-lg-6 d-flex justify-content-center" *ngIf="showBarChart">
+        <canvas baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [colors]='barChartColors'
+        [chartType]="barChartType">
+      </canvas>
+  </div>
+  <div class="col-12 col-lg-6 d-flex justify-content-center" *ngIf="showPieChart">
+      <canvas baseChart
+      [data]="pieChartData"
+      [labels]="pieChartLabels"
+      [chartType]="pieChartType"
+      [options]="pieChartOptions"
+      [colors]='pieChartColors'
+      [legend]="pieChartLegend">
+    </canvas>
+  </div>
+</div>
