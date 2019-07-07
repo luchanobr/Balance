@@ -12,6 +12,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import {MAT_DATE_FORMATS} from '@angular/material/core';
 import * as _moment from "moment";
 import { Moment} from 'moment';
+import { concat } from 'rxjs/operators';
 
 export const MY_FORMATS = {
   parse: {
@@ -42,7 +43,8 @@ export class UsuarioComponent implements OnInit {
   sort: []
   showBarChart: boolean = false;
   totalData: number
-  showPieChart:boolean = false
+  showPieChart:boolean = false;
+  showLineChart: boolean = false;
   formas: any
   todosConceptos:any = [ {}, {}]
   moment =  _moment;
@@ -160,6 +162,7 @@ export class UsuarioComponent implements OnInit {
   }
 
   filtrarBalances(){
+    
     this.filterForm.patchValue({usuario_id:this.usuario.usuario_id})
     let form = this.filterForm.value 
     this.balanceService.filtrarBalances(form).subscribe(
@@ -206,6 +209,44 @@ export class UsuarioComponent implements OnInit {
     pieData = pieData.map(monto => monto *-1);
     this.pieChartLabels = conceptos;
     this.pieChartData = pieData;
+  }
+
+  createLineChart(){
+    this.showLineChart = !this.showLineChart;
+    let data = this.balances.data;
+    let gastos 
+    let ingresos
+    let months = [... new Set(data.filter(data => data.fecha).sort((a,b)=>a-b).map(data => _moment(data.fecha).format("MMM")))]
+    gastos = new Array(months.length).fill(0)
+    ingresos = new Array(months.length).fill(0)
+    data.map(balance => {
+      if (balance.monto < 0 ){
+        var index
+           for ( let month of months){ 
+             if(month == _moment(balance.fecha).format("MMM")) 
+              {index = months.indexOf(month)
+               gastos[index] = gastos[index] + (balance.monto)*-1}
+                else index = ""
+            }
+      }
+      else if (balance.monto > 0 ){
+        var index
+           for ( let month of months){ 
+             if(month == _moment(balance.fecha).format("MMM")) 
+             {index = months.indexOf(month)
+             ingresos[index] = ingresos[index] + balance.monto}
+             else  index = "" 
+            } 
+           
+      }
+      
+    })
+    
+    this.lineChartData = [
+      { data: gastos, label: 'Gastos' },
+      { data: ingresos , label: 'Ingresos' }
+    ];
+    this.lineChartLabels = months;
 
   }
  
@@ -221,6 +262,7 @@ export class UsuarioComponent implements OnInit {
   public barChartColors = [{ backgroundColor: "#2C3E50"},{backgroundColor:"#3498DB"},{backgroundColor:"#fd7e14"}];
 
   public barChartData: ChartDataSets[] = [
+    
   ];
 
   public pieChartOptions: ChartOptions = {
@@ -236,5 +278,27 @@ export class UsuarioComponent implements OnInit {
   public pieChartLegend = true;
   public pieChartColors = [{ backgroundColor: ["#2C3E50","#fd7e14","#3498DB","#18BC9C","#6610f2","#e83e8c","#95a5a6","#F39C12","#E74C3C","#6f42c1","#26c6da"]}]
   
-
+ public lineChartData: ChartDataSets[] = [];
+  public lineChartLabels = [];
+  public lineChartOptions = {
+    responsive: true,
+    scales: {
+      
+      xAxes: [{}],
+      yAxes: [{}]
+    },
+    
+  };
+  public lineChartColors = [
+    { // grey
+      backgroundColor: 'rgba(44,62,80,0.2)',
+      borderColor: 'rgba(44,62,80,1)',
+    },
+    { // dark grey
+      backgroundColor: 'rgba(52,152,219,0.2)',
+      borderColor: 'rgba(52,152,219,1)',
+    }
+  ];
+  public lineChartLegend = true;
+  public lineChartType = 'line';
 }

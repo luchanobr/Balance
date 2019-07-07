@@ -182,7 +182,9 @@ router.put("/balance",validateToken,(req,res)=>{
     if (monto == "Todos") {
     query = query}
 
-    if (fecha != undefined || fecha != null){
+    if (fecha == undefined || fecha == null || fecha == ""){
+      query = query
+    } else {
       data.push(moment(fecha).format("YYYY"), moment(fecha).format("MM"));
       query = query + "  and  YEAR(fecha) = ? and MONTH(fecha) = ? ";
     }

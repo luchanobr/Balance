@@ -172,6 +172,7 @@
     <div class="col-12 d-flex justify-content-between my-1"> 
       <button class="btn btn-outline-primary " (click)="createBarChart()"><i class="fa fa-bar-chart" aria-hidden="true"></i> Bar Chart</button> 
       <button class="btn btn-outline-primary " (click)="createPieChart()"><i class="fa fa-pie-chart" aria-hidden="true"> Pie Chart</i></button>
+      <button class="btn btn-outline-primary " (click)="createLineChart()"><i class="fa fa-line-chart" aria-hidden="true"> Line Chart</i></button>
   
   </div>
     <div class="col-12 col-lg-6 d-flex justify-content-center" *ngIf="showBarChart">
@@ -192,6 +193,16 @@
       [options]="pieChartOptions"
       [colors]='pieChartColors'
       [legend]="pieChartLegend">
+    </canvas>
+  </div>
+  <div class="col-12 col-lg-6 d-flex justify-content-center" *ngIf="showLineChart">
+      <canvas baseChart
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [chartType]="lineChartType"
+      [options]="lineChartOptions"
+      [colors]='lineChartColors'
+      [legend]="lineChartLegend">
     </canvas>
   </div>
 </div>
