@@ -25,7 +25,8 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/assets/bootstrap.min.css"
+              "src/assets/bootstrap.min.css",
+              "src/theme-balance.scss"
             ],
             "scripts": []
           },
@@ -117,6 +118,10 @@
         }
       }
     }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
   }
-
 }
