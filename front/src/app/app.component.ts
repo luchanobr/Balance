@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { UsuariosService } from './services/usuarios.service';
 import { UserStoreService } from './services/user-store.service';
+import { fadeInOut } from './animation/fade';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [fadeInOut]
 })
 export class AppComponent {
 
@@ -15,6 +17,10 @@ export class AppComponent {
 
   }
   
+  routerOutletTrigger(routerOutlet) {
+    return routerOutlet && routerOutlet.activatedRoute;
+  }
+
   ngDoCheck() {
     this.setUsuario()
   }

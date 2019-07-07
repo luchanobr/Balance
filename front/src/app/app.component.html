@@ -33,13 +33,15 @@
         </div>
     </mat-drawer>
   
-    <mat-drawer-content>
+    <mat-drawer-content [@fadeInOut]="routerOutletTrigger(routerOutlet)">
         
-       
-
-             <router-outlet></router-outlet>
-        
-        
+    
+           
+    
+                 <router-outlet #routerOutlet="outlet"></router-outlet>
+            
+            
+     
 
     </mat-drawer-content>
 
