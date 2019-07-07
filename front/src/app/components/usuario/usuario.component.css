@@ -5,3 +5,10 @@
 .mat-select-value {
     color: #2C3E50;
 }
+.table-responsible{
+    overflow: auto;
+    
+}
+.table-widht {
+    min-width: 600px;
+}

@@ -54,13 +54,13 @@
         font-weight: 600 !important;
     }
     h2 {
-        font-size: 1.8rem !important;
+        font-size: 2rem !important;
     }
     h3 {
-        font-size: 1.1rem !important;
+        font-size: 1.6rem !important;
     }
     h4 {
-        font-size: 1rem !important  ;
+        font-size: 1.3rem !important  ;
     }
 }
 *:focus {
